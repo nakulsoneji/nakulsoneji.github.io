@@ -1,12 +1,15 @@
 <script lang="ts">
   import { page } from "$app/stores";
-  const isActive = () => {
-    $page.route.id === "/"
+  const aactive = (cr: any, r: string) => {
+    console.log("called" + cr + " " + r);
+    return false;
   }
 
   const isInactive = () => {
     $page.route.id != "/"
   }
+
+
 </script>
 
 <style>
@@ -51,9 +54,10 @@
 
 <nav id="navbar">
   <div id="home_button">
-    <a class="button" class:active={isActive} href="/">a</a>
+    <a class="button" href="/" class:active={$page.route.id === "/"}>a</a>
   </div>
+
   <div id="other_buttons">
-    <a class="button" href="/todo">b</a>
+    <a class="button" href="/todo" class:active={$page.route.id === "/todo"}>b</a>
   </div>
 </nav>
