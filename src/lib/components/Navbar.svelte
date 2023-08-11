@@ -1,8 +1,8 @@
 <script lang="ts">
   import { page } from "$app/stores";
-  const aactive = (cr: any, r: string) => {
-    console.log("called" + cr + " " + r);
-    return false;
+  const isActive = (cr: any, r: string) => {
+    console.log("called" + " " + r);
+    return cr === r;
   }
 
   const isInactive = () => {
@@ -54,10 +54,10 @@
 
 <nav id="navbar">
   <div id="home_button">
-    <a class="button" href="/" class:active={$page.route.id === "/"}>a</a>
+    <a class="button" href="/" class:active={isActive($page.route.id, "/")}>a</a>
   </div>
 
   <div id="other_buttons">
-    <a class="button" href="/todo" class:active={$page.route.id === "/todo"}>b</a>
+    <a class="button" href="/todo" class:active={isActive($page.route.id, "/todo")}>b</a>
   </div>
 </nav>
