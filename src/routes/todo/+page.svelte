@@ -25,7 +25,7 @@
 <form on:submit|preventDefault={addTodo}>
   <input
       size="30"
-      placeholder="Enter new todo here"
+      placeholder="enter new todo here"
       bind:value={todoText} />
   <button disabled={todoText === ''}>Add</button>
 </form>
