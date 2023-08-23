@@ -52,6 +52,7 @@
   }
 </style>
 
+
 <nav id="navbar">
   <div id="home_button">
     <a class="button" href="/" class:active={isActive($page.route.id, "/")}>a</a>
